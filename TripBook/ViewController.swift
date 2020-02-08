@@ -14,6 +14,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     // MARK :- Outlets
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var nameTxtField: UITextField!
+    @IBOutlet weak var commentTxtField: UITextField!
     
     // MARK :- Properities
     var locationManager = CLLocationManager()
@@ -46,12 +48,16 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             let choosenCoordinates = self.mapView.convert(touchedPoint, toCoordinateFrom: self.mapView)
             let annotation = MKPointAnnotation()
             annotation.coordinate = choosenCoordinates
-            annotation.title = "New Annotation Here"
-            annotation.subtitle = "This is where i've choosen"
+            annotation.title = nameTxtField.text
+            annotation.subtitle = commentTxtField.text
             self.mapView.addAnnotation(annotation)
         }
         
     }
-
+    
+    @IBAction func SaveButtonClicked(_ sender: Any) {
+        
+    }
+    
 }
 

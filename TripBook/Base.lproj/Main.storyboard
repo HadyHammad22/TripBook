@@ -24,6 +24,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmu-bm-ryj">
                                 <rect key="frame" x="364" y="816" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="SaveButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4rI-8F-ihu"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="0yw-0g-wg4">
                                 <rect key="frame" x="35" y="74" width="344" height="85"/>
@@ -58,7 +61,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="commentTxtField" destination="dod-br-tFD" id="54l-hm-iIH"/>
                         <outlet property="mapView" destination="5gI-6w-R80" id="tSn-8x-T4Z"/>
+                        <outlet property="nameTxtField" destination="nhl-SR-dSt" id="6g5-BS-8SC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
