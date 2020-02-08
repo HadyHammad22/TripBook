@@ -19,15 +19,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5gI-6w-R80">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="239" width="414" height="561"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmu-bm-ryj">
+                                <rect key="frame" x="364" y="816" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="0yw-0g-wg4">
+                                <rect key="frame" x="35" y="74" width="344" height="85"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of the place" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nhl-SR-dSt">
+                                        <rect key="frame" x="0.0" y="0.0" width="344" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the comment" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dod-br-tFD">
+                                        <rect key="frame" x="0.0" y="55" width="344" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5gI-6w-R80" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GuV-0E-3TU"/>
-                            <constraint firstItem="5gI-6w-R80" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Rxj-CS-Hxh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5gI-6w-R80" secondAttribute="trailing" id="aFx-fs-iTO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5gI-6w-R80" secondAttribute="bottom" id="tac-ZQ-q4l"/>
+                            <constraint firstItem="5gI-6w-R80" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6Lf-tU-PWB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vmu-bm-ryj" secondAttribute="bottom" constant="16" id="Dnj-I7-1Z3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vmu-bm-ryj" secondAttribute="trailing" constant="16" id="E54-SF-rWL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0yw-0g-wg4" secondAttribute="trailing" constant="35" id="MJ2-pr-Mkc"/>
+                            <constraint firstItem="5gI-6w-R80" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Qm1-gn-e8R"/>
+                            <constraint firstItem="0yw-0g-wg4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="aMa-g7-kVc"/>
+                            <constraint firstItem="5gI-6w-R80" firstAttribute="top" secondItem="0yw-0g-wg4" secondAttribute="bottom" constant="80" id="oF5-c0-FMe"/>
+                            <constraint firstItem="0yw-0g-wg4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="udl-Sn-WhC"/>
+                            <constraint firstItem="vmu-bm-ryj" firstAttribute="top" secondItem="5gI-6w-R80" secondAttribute="bottom" constant="16" id="yqt-dl-gyv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -37,6 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="39.508928571428569"/>
         </scene>
     </scenes>
 </document>
