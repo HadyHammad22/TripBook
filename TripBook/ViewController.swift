@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-import CoreLocation
+import CoreData
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -19,6 +19,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     // MARK :- Properities
     var locationManager = CLLocationManager()
+    var location : Location?
+    var choosenLatitude : Double = 0
+    var choosenLongitude : Double = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +49,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         if getsureRecognizer.state == UIGestureRecognizer.State.began{
             let touchedPoint = getsureRecognizer.location(in: self.mapView)
             let choosenCoordinates = self.mapView.convert(touchedPoint, toCoordinateFrom: self.mapView)
+            self.choosenLatitude = choosenCoordinates.latitude
+            self.choosenLatitude = choosenCoordinates.longitude
             let annotation = MKPointAnnotation()
             annotation.coordinate = choosenCoordinates
             annotation.title = nameTxtField.text
@@ -56,7 +61,14 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     @IBAction func SaveButtonClicked(_ sender: Any) {
-        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        location = Location(context: context)
+        location?.title = self.nameTxtField.text
+        location?.subtitle = self.commentTxtField.text
+        location?.latitude = self.choosenLatitude
+        location?.longitude = self.choosenLongitude
+        appDelegate.saveContext()
     }
     
 }
