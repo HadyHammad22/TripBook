@@ -12,7 +12,6 @@ import CoreData
 
 class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
-    
     // MARK :- Instance
     static func instance () -> MapVC{
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
@@ -31,7 +30,7 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     var choosenLongitude : Double = 0
     var transmitLocation : Location?
     var requestLocation  : CLLocation?
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //mapView and location manager attributes
@@ -91,7 +90,6 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         if pinView == nil{
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             pinView?.canShowCallout = true
-            pinView?.tintColor = .red
             let btn = UIButton(type: .detailDisclosure)
             pinView?.rightCalloutAccessoryView = btn
         }else{
@@ -124,8 +122,23 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         location?.latitude = self.choosenLatitude
         location?.longitude = self.choosenLongitude
         appDelegate.saveContext()
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newLocationCreated"), object: nil)
-        self.navigationController?.popViewController(animated: true)
+        let alert = UIAlertController(title: "Location added successfully", message: "Press ok to show saved locations ", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newLocationCreated"), object: nil)
+            self.navigationController?.popViewController(animated: true)
+        })
+        
+        let noAction = UIAlertAction(title: "NO", style: .cancel, handler: { _ in
+            self.nameTxtField.text = nil
+            self.commentTxtField.text = nil
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newLocationCreated"), object: nil)
+            self.mapView.removeAnnotations(self.mapView.annotations)
+        })
+        
+        alert.addAction(okAction)
+        alert.addAction(noAction)
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
 }
