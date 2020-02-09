@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7419B0A923EF9547005A8C49 /* firstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7419B0A823EF9547005A8C49 /* firstVC.swift */; };
 		74D35EF523EF5744001B6C03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EF423EF5744001B6C03 /* AppDelegate.swift */; };
 		74D35EF723EF5744001B6C03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EF623EF5744001B6C03 /* ViewController.swift */; };
 		74D35EFA23EF5744001B6C03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D35EF823EF5744001B6C03 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7419B0A823EF9547005A8C49 /* firstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstVC.swift; sourceTree = "<group>"; };
 		74D35EF123EF5744001B6C03 /* TripBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D35EF423EF5744001B6C03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74D35EF623EF5744001B6C03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				74D35F0023EF5746001B6C03 /* LaunchScreen.storyboard */,
 				74D35F0323EF5746001B6C03 /* Info.plist */,
 				74D35EFB23EF5744001B6C03 /* TripBook.xcdatamodeld */,
+				7419B0A823EF9547005A8C49 /* firstVC.swift */,
 			);
 			path = TripBook;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74D35EF723EF5744001B6C03 /* ViewController.swift in Sources */,
+				7419B0A923EF9547005A8C49 /* firstVC.swift in Sources */,
 				74D35EF523EF5744001B6C03 /* AppDelegate.swift in Sources */,
 				74D35EFD23EF5744001B6C03 /* TripBook.xcdatamodeld in Sources */,
 			);
