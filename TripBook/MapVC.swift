@@ -25,12 +25,13 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     @IBOutlet weak var commentTxtField: UITextField!
     
     // MARK :- Properities
-    var locationManager = CLLocationManager()
-    var location : Location?
-    var choosenLatitude : Double = 0
+    var locationManager  = CLLocationManager()
+    var location         : Location?
+    var choosenLatitude  : Double = 0
     var choosenLongitude : Double = 0
     var transmitLocation : Location?
-    
+    var requestLocation  : CLLocation?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         //mapView and location manager attributes
@@ -79,7 +80,39 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
             annotation.subtitle = commentTxtField.text
             self.mapView.addAnnotation(annotation)
         }
-        
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation{
+            return nil
+        }
+        let reuseId = "myAnnotation"
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        if pinView == nil{
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView?.canShowCallout = true
+            pinView?.tintColor = .red
+            let btn = UIButton(type: .detailDisclosure)
+            pinView?.rightCalloutAccessoryView = btn
+        }else{
+            pinView?.annotation = annotation
+        }
+        return pinView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if let long = transmitLocation?.longitude, long != 0 ,let lat = transmitLocation?.latitude, lat != 0{
+            requestLocation = CLLocation(latitude: lat, longitude: long)
+        }
+        CLGeocoder().reverseGeocodeLocation(requestLocation!, completionHandler: { (placemarks, error) in
+            if let placemark = placemarks, placemark.count > 0{
+                let newPlaceMark = MKPlacemark(placemark: placemark[0])
+                let item = MKMapItem(placemark: newPlaceMark)
+                item.name = self.transmitLocation?.title
+                let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+                item.openInMaps(launchOptions: launchOptions)
+            }
+        })
     }
     
     @IBAction func SaveButtonClicked(_ sender: Any) {
@@ -91,6 +124,8 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         location?.latitude = self.choosenLatitude
         location?.longitude = self.choosenLongitude
         appDelegate.saveContext()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newLocationCreated"), object: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

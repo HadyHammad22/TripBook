@@ -60,7 +60,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5gI-6w-R80">
-                                <rect key="frame" x="0.0" y="239" width="414" height="561"/>
+                                <rect key="frame" x="0.0" y="189" width="414" height="611"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmu-bm-ryj">
                                 <rect key="frame" x="364" y="816" width="34" height="30"/>
@@ -95,7 +95,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0yw-0g-wg4" secondAttribute="trailing" constant="35" id="MJ2-pr-Mkc"/>
                             <constraint firstItem="5gI-6w-R80" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Qm1-gn-e8R"/>
                             <constraint firstItem="0yw-0g-wg4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="aMa-g7-kVc"/>
-                            <constraint firstItem="5gI-6w-R80" firstAttribute="top" secondItem="0yw-0g-wg4" secondAttribute="bottom" constant="80" id="oF5-c0-FMe"/>
+                            <constraint firstItem="5gI-6w-R80" firstAttribute="top" secondItem="0yw-0g-wg4" secondAttribute="bottom" constant="30" id="oF5-c0-FMe"/>
                             <constraint firstItem="0yw-0g-wg4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="udl-Sn-WhC"/>
                             <constraint firstItem="vmu-bm-ryj" firstAttribute="top" secondItem="5gI-6w-R80" secondAttribute="bottom" constant="16" id="yqt-dl-gyv"/>
                         </constraints>

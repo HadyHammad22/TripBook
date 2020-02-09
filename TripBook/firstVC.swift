@@ -23,7 +23,11 @@ class firstVC: UIViewController {
         fetchData()
     }
     
-    func fetchData(){
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchData), name: NSNotification.Name(rawValue: "newLocationCreated"), object: nil)
+    }
+    
+    @objc func fetchData(){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
