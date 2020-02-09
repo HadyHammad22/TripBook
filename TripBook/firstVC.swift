@@ -63,4 +63,27 @@ extension firstVC: UITableViewDelegate, UITableViewDataSource{
         mapVC.transmitLocation = locationArray?[indexPath.row]
        navigationController?.pushViewController(mapVC, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard let title = self.locationArray?[indexPath.row].title else {return}
+        if editingStyle == .delete{
+            let alert = UIAlertController(title: "Do you want to delete \"\(title)\" from the list of location?", message: "", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let context = appDelegate.persistentContainer.viewContext
+                if let deletedLocation = self.locationArray?[indexPath.row]{
+                    context.delete(deletedLocation)
+                    appDelegate.saveContext()
+                    self.fetchData()
+                }
+            })
+            alert.addAction(okAction)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
 }
