@@ -63,13 +63,13 @@
 			isa = PBXGroup;
 			children = (
 				74D35EF423EF5744001B6C03 /* AppDelegate.swift */,
+				7419B0A823EF9547005A8C49 /* firstVC.swift */,
 				74D35EF623EF5744001B6C03 /* ViewController.swift */,
 				74D35EF823EF5744001B6C03 /* Main.storyboard */,
 				74D35EFE23EF5746001B6C03 /* Assets.xcassets */,
 				74D35F0023EF5746001B6C03 /* LaunchScreen.storyboard */,
 				74D35F0323EF5746001B6C03 /* Info.plist */,
 				74D35EFB23EF5744001B6C03 /* TripBook.xcdatamodeld */,
-				7419B0A823EF9547005A8C49 /* firstVC.swift */,
 			);
 			path = TripBook;
 			sourceTree = "<group>";

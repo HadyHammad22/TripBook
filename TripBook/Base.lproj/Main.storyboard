@@ -21,6 +21,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bpX-QA-ly4">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="GGX-KT-1Em" id="IZg-zT-3Ce"/>
+                                    <outlet property="delegate" destination="GGX-KT-1Em" id="lxN-Jc-pkM"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -33,9 +37,14 @@
                         <viewLayoutGuide key="safeArea" id="JOB-ZW-VIa"/>
                     </view>
                     <navigationItem key="navigationItem" id="2Qd-HY-Jv7">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sdc-dE-mak"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sdc-dE-mak">
+                            <connections>
+                                <action selector="addButtonClicked:" destination="GGX-KT-1Em" id="Q6o-Iq-d6a"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="locationTV" destination="bpX-QA-ly4" id="uJ0-i3-Is7"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toMapVC" id="jxo-jr-jaL"/>
                     </connections>
                 </viewController>
