@@ -15,8 +15,8 @@ class firstVC: UIViewController {
     @IBOutlet weak var locationTV: UITableView!
     
     // MARK :- Properities
-    var locationArray:[Location]?
-    
+    var locationArray : [Location]?
+   
     // MARK :- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class firstVC: UIViewController {
     
     // MARK :- Actions
     @IBAction func addButtonClicked(_ sender: Any) {
-        performSegue(withIdentifier: "toMapVC", sender: nil)
+        navigationController?.pushViewController(MapVC.instance(), animated: true)
     }
     
 }
@@ -52,5 +52,11 @@ extension firstVC: UITableViewDelegate, UITableViewDataSource{
         let cell = UITableViewCell()
         cell.textLabel?.text = self.locationArray?[indexPath.row].title
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let mapVC = MapVC.instance()
+        mapVC.transmitLocation = locationArray?[indexPath.row]
+       navigationController?.pushViewController(mapVC, animated: true)
     }
 }

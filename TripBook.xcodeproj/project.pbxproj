@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7419B0A923EF9547005A8C49 /* firstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7419B0A823EF9547005A8C49 /* firstVC.swift */; };
 		74D35EF523EF5744001B6C03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EF423EF5744001B6C03 /* AppDelegate.swift */; };
-		74D35EF723EF5744001B6C03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EF623EF5744001B6C03 /* ViewController.swift */; };
+		74D35EF723EF5744001B6C03 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EF623EF5744001B6C03 /* MapVC.swift */; };
 		74D35EFA23EF5744001B6C03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D35EF823EF5744001B6C03 /* Main.storyboard */; };
 		74D35EFD23EF5744001B6C03 /* TripBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EFB23EF5744001B6C03 /* TripBook.xcdatamodeld */; };
 		74D35EFF23EF5746001B6C03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D35EFE23EF5746001B6C03 /* Assets.xcassets */; };
@@ -21,7 +21,7 @@
 		7419B0A823EF9547005A8C49 /* firstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstVC.swift; sourceTree = "<group>"; };
 		74D35EF123EF5744001B6C03 /* TripBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D35EF423EF5744001B6C03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		74D35EF623EF5744001B6C03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		74D35EF623EF5744001B6C03 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		74D35EF923EF5744001B6C03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74D35EFC23EF5744001B6C03 /* TripBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TripBook.xcdatamodel; sourceTree = "<group>"; };
 		74D35EFE23EF5746001B6C03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 			children = (
 				74D35EF423EF5744001B6C03 /* AppDelegate.swift */,
 				7419B0A823EF9547005A8C49 /* firstVC.swift */,
-				74D35EF623EF5744001B6C03 /* ViewController.swift */,
+				74D35EF623EF5744001B6C03 /* MapVC.swift */,
 				74D35EF823EF5744001B6C03 /* Main.storyboard */,
 				74D35EFE23EF5746001B6C03 /* Assets.xcassets */,
 				74D35F0023EF5746001B6C03 /* LaunchScreen.storyboard */,
@@ -153,7 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74D35EF723EF5744001B6C03 /* ViewController.swift in Sources */,
+				74D35EF723EF5744001B6C03 /* MapVC.swift in Sources */,
 				7419B0A923EF9547005A8C49 /* firstVC.swift in Sources */,
 				74D35EF523EF5744001B6C03 /* AppDelegate.swift in Sources */,
 				74D35EFD23EF5744001B6C03 /* TripBook.xcdatamodeld in Sources */,
