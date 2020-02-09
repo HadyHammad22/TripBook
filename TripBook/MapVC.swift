@@ -122,21 +122,20 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         location?.latitude = self.choosenLatitude
         location?.longitude = self.choosenLongitude
         appDelegate.saveContext()
-        let alert = UIAlertController(title: "Location added successfully", message: "Press ok to show saved locations ", preferredStyle: .alert)
+        let alert = UIAlertController(title: "\"\( self.nameTxtField.text ?? "" )\" added success", message: "Press OK to show saved locations list ", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newLocationCreated"), object: nil)
             self.navigationController?.popViewController(animated: true)
         })
         
-        let noAction = UIAlertAction(title: "NO", style: .cancel, handler: { _ in
+        let noAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
             self.nameTxtField.text = nil
             self.commentTxtField.text = nil
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newLocationCreated"), object: nil)
             self.mapView.removeAnnotations(self.mapView.annotations)
         })
-        
-        alert.addAction(okAction)
         alert.addAction(noAction)
+        alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
         
     }
