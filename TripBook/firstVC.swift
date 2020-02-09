@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class firstVC: UIViewController {
+class FirstVC: UIViewController {
 
     // MARK :- Outlets
     @IBOutlet weak var locationTV: UITableView!
@@ -47,7 +47,7 @@ class firstVC: UIViewController {
     
 }
 
-extension firstVC: UITableViewDelegate, UITableViewDataSource{
+extension FirstVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.locationArray!.count
     }
