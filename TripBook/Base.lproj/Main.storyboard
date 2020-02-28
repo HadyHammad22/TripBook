@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--FirstVC-->
+        <!--Saved LocationsVC-->
         <scene sceneID="aWm-IH-ZNl">
             <objects>
-                <viewController storyboardIdentifier="FirstVC" id="GGX-KT-1Em" customClass="FirstVC" customModule="TripBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SavedLocationsVC" id="GGX-KT-1Em" customClass="SavedLocationsVC" customModule="TripBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B9p-NK-j1T">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

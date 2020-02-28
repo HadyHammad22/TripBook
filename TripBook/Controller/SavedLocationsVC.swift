@@ -1,22 +1,22 @@
 //
-//  firstVC.swift
+//  SavedLocationsVC.swift
 //  TripBook
 //
-//  Created by HadyHammad on 2/8/20.
+//  Created by Hady Hammad on 2/28/20.
 //  Copyright © 2020 HadyHammad. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class FirstVC: UIViewController {
-
+class SavedLocationsVC: UIViewController {
+    
     // MARK :- Outlets
     @IBOutlet weak var locationTV: UITableView!
     
     // MARK :- Properities
     var locationArray : [Location]?
-   
+    
     // MARK :- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +47,7 @@ class FirstVC: UIViewController {
     
 }
 
-extension FirstVC: UITableViewDelegate, UITableViewDataSource{
+extension SavedLocationsVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.locationArray!.count
     }
@@ -61,7 +61,7 @@ extension FirstVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let mapVC = MapVC.instance()
         mapVC.transmitLocation = locationArray?[indexPath.row]
-       navigationController?.pushViewController(mapVC, animated: true)
+        navigationController?.pushViewController(mapVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

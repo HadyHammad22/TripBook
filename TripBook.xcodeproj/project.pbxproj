@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7419B0A923EF9547005A8C49 /* firstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7419B0A823EF9547005A8C49 /* firstVC.swift */; };
+		744EB7E024096A4700A0D690 /* SavedLocationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744EB7DF24096A4700A0D690 /* SavedLocationsVC.swift */; };
 		74D35EF523EF5744001B6C03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EF423EF5744001B6C03 /* AppDelegate.swift */; };
 		74D35EF723EF5744001B6C03 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D35EF623EF5744001B6C03 /* MapVC.swift */; };
 		74D35EFA23EF5744001B6C03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D35EF823EF5744001B6C03 /* Main.storyboard */; };
@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7419B0A823EF9547005A8C49 /* firstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstVC.swift; sourceTree = "<group>"; };
+		744EB7DF24096A4700A0D690 /* SavedLocationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationsVC.swift; sourceTree = "<group>"; };
 		74D35EF123EF5744001B6C03 /* TripBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D35EF423EF5744001B6C03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74D35EF623EF5744001B6C03 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
@@ -42,6 +42,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		744EB7E124096A5100A0D690 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				744EB7DF24096A4700A0D690 /* SavedLocationsVC.swift */,
+				74D35EF623EF5744001B6C03 /* MapVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		74D35EE823EF5744001B6C03 = {
 			isa = PBXGroup;
 			children = (
@@ -62,9 +71,8 @@
 		74D35EF323EF5744001B6C03 /* TripBook */ = {
 			isa = PBXGroup;
 			children = (
+				744EB7E124096A5100A0D690 /* Controller */,
 				74D35EF423EF5744001B6C03 /* AppDelegate.swift */,
-				7419B0A823EF9547005A8C49 /* firstVC.swift */,
-				74D35EF623EF5744001B6C03 /* MapVC.swift */,
 				74D35EF823EF5744001B6C03 /* Main.storyboard */,
 				74D35EFE23EF5746001B6C03 /* Assets.xcassets */,
 				74D35F0023EF5746001B6C03 /* LaunchScreen.storyboard */,
@@ -153,8 +161,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				744EB7E024096A4700A0D690 /* SavedLocationsVC.swift in Sources */,
 				74D35EF723EF5744001B6C03 /* MapVC.swift in Sources */,
-				7419B0A923EF9547005A8C49 /* firstVC.swift in Sources */,
 				74D35EF523EF5744001B6C03 /* AppDelegate.swift in Sources */,
 				74D35EFD23EF5744001B6C03 /* TripBook.xcdatamodeld in Sources */,
 			);
