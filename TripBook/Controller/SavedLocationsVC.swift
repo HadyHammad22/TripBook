@@ -53,8 +53,9 @@ extension SavedLocationsVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = locationTV.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = self.locationArray?[indexPath.row].title
+        cell.detailTextLabel?.text = self.locationArray?[indexPath.row].subtitle
         return cell
     }
     

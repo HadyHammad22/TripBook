@@ -40,7 +40,7 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         let recognizer = UILongPressGestureRecognizer(target: self, action: #selector(chooseLocation(getsureRecognizer:)))
-        recognizer.minimumPressDuration = 3
+        recognizer.minimumPressDuration = 2
         mapView.addGestureRecognizer(recognizer)
         setupLocation()
     }
